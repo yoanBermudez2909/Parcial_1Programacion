@@ -1,41 +1,61 @@
 package model;
 
 public class ServicioAdicional {
-    // Atributos servicio adicional
-    private String bebidas, comida, atracciones, spa;
-    private int pago;
+    private String codigo;
+    private String nombre;
+    private String descripcion;
+    private double precio;
+    private boolean disponible;
 
-    // Metodo constructor
-    public ServicioAdicional(String bebidas, String comida, String atracciones, String spa, int pago) {
-        this.bebidas = bebidas;
-        this.comida = comida;
-        this.atracciones = atracciones;
-        this.spa = spa;
-        this.pago = pago;
+    public ServicioAdicional(String codigo, String nombre, String descripcion,
+                             double precio, boolean disponible) {
+        this.codigo = codigo;
+        this.nombre = nombre;
+        this.descripcion = descripcion;
+        this.precio = precio;
+        this.disponible = disponible;
     }
 
-    public String getBebidas() { return bebidas; }
-    public void setBebidas(String bebidas) { this.bebidas = bebidas; }
+    public String getCodigo() {
+        return codigo;
+    }
+    public void setCodigo(String codigo) {
+        this.codigo = codigo;
+    }
 
-    public String getComida() { return comida; }
-    public void setComida(String comida) { this.comida = comida; }
+    public String getNombre() {
+        return nombre; }
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
 
-    public String getAtracciones() { return atracciones; }
-    public void setAtracciones(String atracciones) { this.atracciones = atracciones; }
+    public String getDescripcion() {
+        return descripcion;
+    }
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
 
-    public String getSpa() { return spa; }
-    public void setSpa(String spa) { this.spa = spa; }
+    public double getPrecio() {
+        return precio;
+    }
+    public void setPrecio(double precio) {
+        this.precio = precio;
+    }
 
-    public int getPago() { return pago; }
-    public void setPago(int pago) { this.pago = pago; }
-
+    public boolean isDisponible() {
+        return disponible;
+    }
+    public void setDisponible(boolean disponible) {
+        this.disponible = disponible;
+    }
     @Override
     public String toString() {
-        return "ServicioAdicional{bebidas='" + bebidas + '\'' +
-                ", comida='" + comida + '\'' +
-                ", atracciones='" + atracciones + '\'' +
-                ", spa='" + spa + '\'' +
-                ", pago=" + pago + "}";
+        return "ServicioAdicional{codigo='" + codigo + '\'' +
+                ", nombre='" + nombre + '\'' +
+                ", descripcion='" + descripcion + '\'' +
+                ", precio=" + precio +
+                ", disponible=" + disponible + "}";
     }
 }
 

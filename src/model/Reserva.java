@@ -1,48 +1,79 @@
 package model;
 
 public class Reserva {
-    //Atributos reserva
-    private String nombreCliente,estado;
-    private int fechaReserva,fechaSalida;
-    //Metodo constructor
-    private int id;
-    private Huesped huesped;
-    private Habitacion habitacion;
-    private String fechaInicio;
-    private String fechaFin;
+    private String codigoReserva;
+    private int fechaRealizacion;
+    private int fechaEntrada;
+    private int fechaSalida;
+    private String estado;
+    private String metodoPago;
+    private double valorTotal;
 
-    public Reserva(int id, Huesped huesped, Habitacion habitacion,
-                   String fechaInicio, String fechaFin) {
-        this.id = id;
-        this.huesped = huesped;
-        this.habitacion = habitacion;
-        this.fechaInicio = fechaInicio;
-        this.fechaFin = fechaFin;
+    public Reserva(String codigoReserva, int fechaRealizacion, int fechaEntrada,
+                   int fechaSalida, String estado, String metodoPago, double valorTotal) {
+        this.codigoReserva = codigoReserva;
+        this.fechaRealizacion = fechaRealizacion;
+        this.fechaEntrada = fechaEntrada;
+        this.fechaSalida = fechaSalida;
+        this.estado = estado;
+        this.metodoPago = metodoPago;
+        this.valorTotal = valorTotal;
     }
 
-    // Getters y setters
-    public int getId() { return id; }
-    public void setId(int id) { this.id = id; }
+    public String getCodigoReserva() {
+        return codigoReserva;
+    }
+    public void setCodigoReserva(String codigoReserva) {
+        this.codigoReserva = codigoReserva;
+    }
 
-    public Huesped getHuesped() { return huesped; }
-    public void setHuesped(Huesped huesped) { this.huesped = huesped; }
+    public int getFechaRealizacion() {
+        return fechaRealizacion;
+    }
+    public void setFechaRealizacion(int fechaRealizacion) { this.fechaRealizacion = fechaRealizacion; }
 
-    public Habitacion getHabitacion() { return habitacion; }
-    public void setHabitacion(Habitacion habitacion) { this.habitacion = habitacion; }
+    public int getFechaEntrada() {
+        return fechaEntrada;
+    }
+    public void setFechaEntrada(int fechaEntrada) { this.fechaEntrada = fechaEntrada; }
 
-    public String getFechaInicio() { return fechaInicio; }
-    public void setFechaInicio(String fechaInicio) { this.fechaInicio = fechaInicio; }
+    public int getFechaSalida() {
+        return fechaSalida;
+    }
+    public void setFechaSalida(int fechaSalida) {
+        this.fechaSalida = fechaSalida;
+    }
 
-    public String getFechaFin() { return fechaFin; }
-    public void setFechaFin(String fechaFin) { this.fechaFin = fechaFin; }
+    public String getEstado() {
+        return estado;
+    }
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
 
+    public String getMetodoPago() {
+        return metodoPago;
+    }
+    public void setMetodoPago(String metodoPago) {
+        this.metodoPago = metodoPago;
+    }
+
+    public double getValorTotal() {
+        return valorTotal;
+    }
+    public void setValorTotal(double valorTotal) {
+        this.valorTotal = valorTotal;
+    }
     @Override
     public String toString() {
-        return "Reserva{id=" + id +
-                ", huesped=" + huesped +
-                ", habitacion=" + habitacion +
-                ", inicio='" + fechaInicio + '\'' +
-                ", fin='" + fechaFin + '\'' + "}";
+        return "Reserva{codigoReserva='" + codigoReserva + '\'' +
+                ", fechaRealizacion=" + fechaRealizacion +
+                ", fechaEntrada=" + fechaEntrada +
+                ", fechaSalida=" + fechaSalida +
+                ", estado='" + estado + '\'' +
+                ", metodoPago='" + metodoPago + '\'' +
+                ", valorTotal=" + valorTotal + "}";
     }
 }
+
 
