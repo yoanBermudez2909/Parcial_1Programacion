@@ -1,9 +1,11 @@
 package model;
 //Atributos de la habitacion
+
 public class Habitacion {
   private String piso,tipo,estado;
   private int capacidad,numero;
   private double precio;
+
   //Metodo constructor
     public Habitacion(String piso, String tipo,int capacidad,double precio,String estado,int numero) {
       this.piso = piso;

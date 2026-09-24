@@ -29,6 +29,8 @@ public class ServicioAdicional {
     public int getPago() { return pago; }
     public void setPago(int pago) { this.pago = pago; }
 
+
+
     @Override
     public String toString() {
         return "ServicioAdicional{bebidas='" + bebidas + '\'' +
