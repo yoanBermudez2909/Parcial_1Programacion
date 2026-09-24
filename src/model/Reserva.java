@@ -1,16 +1,19 @@
 package model;
 
+import java.util.Date;
+
 public class Reserva {
+    //Atributos de la clase Reserva
     private String codigoReserva;
-    private int fechaRealizacion;
-    private int fechaEntrada;
-    private int fechaSalida;
+    private Date fechaRealizacion;
+    private Date fechaEntrada;
+    private Date fechaSalida;
     private String estado;
     private String metodoPago;
     private double valorTotal;
-
-    public Reserva(String codigoReserva, int fechaRealizacion, int fechaEntrada,
-                   int fechaSalida, String estado, String metodoPago, double valorTotal) {
+//Metodo constructor
+    public Reserva(String codigoReserva, Date fechaRealizacion, Date fechaEntrada,
+                   Date fechaSalida, String estado, String metodoPago, double valorTotal) {
         this.codigoReserva = codigoReserva;
         this.fechaRealizacion = fechaRealizacion;
         this.fechaEntrada = fechaEntrada;
@@ -27,20 +30,24 @@ public class Reserva {
         this.codigoReserva = codigoReserva;
     }
 
-    public int getFechaRealizacion() {
+    public Date getFechaRealizacion() {
         return fechaRealizacion;
     }
-    public void setFechaRealizacion(int fechaRealizacion) { this.fechaRealizacion = fechaRealizacion; }
+    public void setFechaRealizacion(Date fechaRealizacion) {
+        this.fechaRealizacion = fechaRealizacion;
+    }
 
-    public int getFechaEntrada() {
+    public Date getFechaEntrada() {
         return fechaEntrada;
     }
-    public void setFechaEntrada(int fechaEntrada) { this.fechaEntrada = fechaEntrada; }
+    public void setFechaEntrada(Date fechaEntrada) {
+        this.fechaEntrada = fechaEntrada;
+    }
 
-    public int getFechaSalida() {
+    public Date getFechaSalida() {
         return fechaSalida;
     }
-    public void setFechaSalida(int fechaSalida) {
+    public void setFechaSalida(Date fechaSalida) {
         this.fechaSalida = fechaSalida;
     }
 
@@ -64,6 +71,7 @@ public class Reserva {
     public void setValorTotal(double valorTotal) {
         this.valorTotal = valorTotal;
     }
+    //ToString
     @Override
     public String toString() {
         return "Reserva{codigoReserva='" + codigoReserva + '\'' +

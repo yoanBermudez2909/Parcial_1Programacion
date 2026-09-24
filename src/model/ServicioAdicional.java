@@ -1,12 +1,13 @@
 package model;
 
 public class ServicioAdicional {
+    //Atributos de la clase ServicioAdiional
     private String codigo;
     private String nombre;
     private String descripcion;
     private double precio;
     private boolean disponible;
-
+//Metodo constructor
     public ServicioAdicional(String codigo, String nombre, String descripcion,
                              double precio, boolean disponible) {
         this.codigo = codigo;
@@ -24,7 +25,8 @@ public class ServicioAdicional {
     }
 
     public String getNombre() {
-        return nombre; }
+        return nombre;
+    }
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
@@ -49,6 +51,7 @@ public class ServicioAdicional {
     public void setDisponible(boolean disponible) {
         this.disponible = disponible;
     }
+    //ToString
     @Override
     public String toString() {
         return "ServicioAdicional{codigo='" + codigo + '\'' +
