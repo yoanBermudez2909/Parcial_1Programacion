@@ -35,6 +35,50 @@ import java.util.List;
             this.listHotelServicios = new ArrayList<>();
         }
 
+
+
+
+        public Huesped buscarHuesped(String documento) {
+            Huesped encontrado = null;
+
+            for (int i = 0; i < this.listHotelHuespedes.size(); ++i) {
+                Huesped huesped = this.listHotelHuespedes.get(i);
+                if (huesped.getDocumento().equals(documento)) {
+                    encontrado = huesped;
+                    break;
+                }
+            }
+
+            return encontrado;
+        }
+
+        public boolean registrarHuesped(String nombreCompleto, String documento, String telefono, String correo, String pais) {
+            boolean registrado = false;
+            Huesped huesped = this.buscarHuesped(documento);
+            if (huesped == null) {
+                Huesped nuevo = new Huesped(nombreCompleto, documento, telefono, correo, pais);
+                this.listHotelHuespedes.add(nuevo);
+                registrado = true;
+            }
+
+            return registrado;
+        }
+
+        // Consulta un huésped por teléfono (funcionalidad del enunciado)
+        public Huesped buscarHuespedPorTelefono(String telefono) {
+            Huesped encontrado = null;
+
+            for (int i = 0; i < this.listHotelHuespedes.size(); ++i) {
+                Huesped huesped = this.listHotelHuespedes.get(i);
+                if (huesped.getTelefono().equals(telefono)) {
+                    encontrado = huesped;
+                    break;
+                }
+            }
+
+            return encontrado;
+        }
+
         public String getNombreComercial() {
             return nombreComercial;
         }
