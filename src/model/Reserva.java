@@ -151,6 +151,8 @@ public class Reserva {
         return this.valorTotal;
     }
 
+
+
     public String getCodigoReserva() {
         return codigoReserva;
     }
@@ -229,6 +231,22 @@ public class Reserva {
 
     public void setListReservaServicios(List<ServicioAdicional> listReservaServicios) {
         this.listReservaServicios = listReservaServicios;
+    }
+
+    @Override
+    public String toString() {
+        return "Reserva{" +
+                "codigoReserva='" + codigoReserva + '\'' +
+                ", fechaRealizacion='" + fechaRealizacion + '\'' +
+                ", fechaEntrada='" + fechaEntrada + '\'' +
+                ", fechaSalida='" + fechaSalida + '\'' +
+                ", estado='" + estado + '\'' +
+                ", metodoPago='" + metodoPago + '\'' +
+                ", valorTotal=" + valorTotal +
+                ", huesped=" + (huesped != null ? huesped.getnombreCompleto() : "null") +
+                ", listReservaHabitaciones=" + listReservaHabitaciones +
+                ", listReservaServicios=" + listReservaServicios +
+                '}';
     }
 }
 
