@@ -59,49 +59,12 @@ public class Reserva {
 
         return false;
     }
-    /** * Metodo que permite eliminar una habitacion de la reserva * @param numero numero de la habitacion a eliminar * @return true si se elimina, false si no existe */
-    public boolean eliminarHabitacion(int numero) {
 
-        Habitacion habitacion = buscarHabitacion(numero);
-
-        if (habitacion != null) {
-            this.listReservaHabitaciones.remove(habitacion);
-            return true;
-        }
-
-        return false;
-    }
-    /** * Metodo que permite buscar un servicio adicional de la reserva * @param codigo codigo del servicio a buscar * @return servicio adicional encontrado */
-    public ServicioAdicional buscarServicio(String codigo) {
-
-        ServicioAdicional encontrado = null;
-
-        for (int i = 0; i < this.listReservaServicios.size(); ++i) {
-            ServicioAdicional servicio = this.listReservaServicios.get(i);
-            if (servicio.getCodigo().equals(codigo)) {
-                encontrado = servicio;
-                break;
-            }
-        }
-
-        return encontrado;
-    }
     /** * Metodo que permite agregar un servicio adicional a la reserva * @param servicio servicio adicional que se desea agregar */
     public void agregarServicio(ServicioAdicional servicio) {
         this.listReservaServicios.add(servicio);
     }
-    /** * Metodo que permite eliminar un servicio adicional de la reserva * @param codigo codigo del servicio a eliminar * @return true si se elimina, false si no existe */
-    public boolean eliminarServicio(String codigo) {
 
-        ServicioAdicional servicio = buscarServicio(codigo);
-
-        if (servicio != null) {
-            this.listReservaServicios.remove(servicio);
-            return true;
-        }
-
-        return false;
-    }
     /** * Metodo que permite convertir una fecha AAAAMMDD en un numero de dias * @param fecha fecha en formato AAAAMMDD * @return cantidad de dias */
     private int fechaADias(String fecha) {
 
