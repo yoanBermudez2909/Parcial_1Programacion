@@ -10,12 +10,16 @@ public class Habitacion {
     private int numero;
     private double precioPorNoche;
 
-    // Metodo constructor
-    public Habitacion(String piso, String tipo, int capacidad, double precioPorNoche, String estado, int numero) {
+    /** * Metodo constructor de la clase Habitacion*
+     * * @param piso de la habitacion
+     * * @param tipo de la habitacion
+     * * @param capacidad de la habitacion
+     * * @param estado de la habitacion
+     * * @param numero de la habitacion */
+    public Habitacion(String piso, String tipo, int capacidad,  String estado, int numero) {
         this.piso = piso;
         this.tipo = tipo;
         this.capacidad = capacidad;
-        this.precioPorNoche = precioPorNoche;
         this.estado = estado;
         this.numero = numero;
     }

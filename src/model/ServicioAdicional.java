@@ -9,7 +9,7 @@ public class ServicioAdicional {
     private double precio;
     private boolean disponible;
 
-    // Metodo constructor
+    /** * Metodo constructor de la clase ServicioAdicional * @param codigo del servicio adicional * @param nombre del servicio adicional * @param descripcion del servicio adicional * @param precio del servicio adicional * @param disponible disponibilidad del servicio adicional */
     public ServicioAdicional(String codigo, String nombre, String descripcion, double precio, boolean disponible) {
         this.codigo = codigo;
         this.nombre = nombre;

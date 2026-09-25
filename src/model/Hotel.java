@@ -20,11 +20,11 @@ public class Hotel {
 
     /**
      * Metodo constructor de la clase Hotel
-     * @param nombreComercial nombre comercial del hotel
-     * @param nit NIT del hotel
-     * @param direccion direccion del hotel
-     * @param telefonoHotel telefono del hotel
-     * @param paginaWeb pagina web del hotel
+     * @param nombreComercial nombre comercial del Hotel
+     * @param nit NIT del Hotel
+     * @param direccion direccion del Hotel
+     * @param telefonoHotel telefono del Hotel
+     * @param paginaWeb pagina web del Hotel
      */
     public Hotel(String nombreComercial, String nit, String direccion,
                  String telefonoHotel, String paginaWeb) {
@@ -42,13 +42,10 @@ public class Hotel {
     }
 
 
-    // =========================================================
-    // CRUD DE HUESPED
-    // =========================================================
 
     /**
-     * Metodo que permite buscar un huesped por documento.
-     * @param documento documento del huesped
+     * Metodo que permite buscar un huesped por documento
+     * @param documento del huesped a buscar
      * @return huesped encontrado
      */
     public Huesped buscarHuesped(String documento) {
@@ -152,10 +149,6 @@ public class Hotel {
     }
 
 
-    // =========================================================
-    // METODOS ESPECIALES DE HUESPED
-    // =========================================================
-
     /**
      * Metodo que permite buscar un huesped por telefono.
      * @param telefono telefono del huesped
@@ -228,9 +221,6 @@ public class Hotel {
     }
 
 
-    // =========================================================
-    // CRUD DE HABITACION
-    // =========================================================
 
     /**
      * Metodo que permite buscar una habitacion por numero.
@@ -254,11 +244,8 @@ public class Hotel {
         return encontrada;
     }
 
-    /**
-     * Metodo que permite registrar una habitacion.
-     * @return true si se registra, false si ya existe
-     */
-    public boolean registrarHabitacion(int numero, String piso, String tipo, int capacidad, double precioPorNoche, String estado) {
+
+    public boolean registrarHabitacion(int numero, String piso, String tipo, int capacidad, String estado) {
 
         boolean registrada = false;
 
@@ -266,14 +253,17 @@ public class Hotel {
 
         if (habitacion == null) {
 
+            double precioPorNoche = obtenerPrecioBase(tipo);
+
             Habitacion nueva = new Habitacion(
                     piso,
                     tipo,
                     capacidad,
-                    precioPorNoche,
                     estado,
                     numero
             );
+
+            nueva.setprecioPorNoche(precioPorNoche);
 
             this.listHotelHabitaciones.add(nueva);
             registrada = true;
@@ -286,16 +276,13 @@ public class Hotel {
      * Metodo que permite actualizar una habitacion.
      * @return true si se actualiza, false si no existe
      */
-    public boolean actualizarHabitacion(int numero,
-                                        String piso,
-                                        String tipo,
-                                        int capacidad,
-                                        double precioPorNoche,
-                                        String estado) {
+    public boolean actualizarHabitacion(int numero, String piso, String tipo, int capacidad, String estado) {
 
         Habitacion habitacion = buscarHabitacion(numero);
 
         if (habitacion != null) {
+
+            double precioPorNoche = obtenerPrecioBase(tipo);
 
             habitacion.setPiso(piso);
             habitacion.setTipo(tipo);
@@ -327,12 +314,7 @@ public class Hotel {
         return false;
     }
 
-    /**
-     * Metodo que permite obtener un precio base
-     * dependiendo del tipo de habitacion.
-     * @param tipo tipo de habitacion
-     * @return precio base
-     */
+
     public double obtenerPrecioBase(String tipo) {
 
         double precio;

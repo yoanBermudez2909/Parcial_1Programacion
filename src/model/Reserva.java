@@ -19,7 +19,7 @@ public class Reserva {
     private List<Habitacion> listReservaHabitaciones;
     private List<ServicioAdicional> listReservaServicios;
 
-
+    /** * Metodo constructor de la clase Reserva * @param codigoReserva codigo de la reserva * @param fechaRealizacion fecha de realizacion de la reserva * @param fechaEntrada fecha de entrada de la reserva * @param fechaSalida fecha de salida de la reserva * @param estado estado de la reserva * @param metodoPago metodo de pago de la reserva * @param valorTotal valor total de la reserva */
     public Reserva(String codigoReserva, String fechaRealizacion, String fechaEntrada, String fechaSalida, String estado, String metodoPago, double valorTotal) {
 
         this.codigoReserva = codigoReserva;
@@ -34,7 +34,7 @@ public class Reserva {
         this.listReservaHabitaciones = new ArrayList<>();
         this.listReservaServicios = new ArrayList<>();
     }
-
+    /** * Metodo que permite buscar una habitacion de la reserva * @param numero numero de la habitacion a buscar * @return habitacion encontrada */
     public Habitacion buscarHabitacion(int numero) {
 
         Habitacion encontrada = null;
@@ -49,7 +49,7 @@ public class Reserva {
 
         return encontrada;
     }
-
+    /** * Metodo que permite agregar una habitacion a la reserva * @param habitacion habitacion que se desea agregar * @return true si se agrega, false si ya existe */
     public boolean agregarHabitacion(Habitacion habitacion) {
 
         if (buscarHabitacion(habitacion.getNumero()) == null) {
@@ -59,7 +59,7 @@ public class Reserva {
 
         return false;
     }
-
+    /** * Metodo que permite eliminar una habitacion de la reserva * @param numero numero de la habitacion a eliminar * @return true si se elimina, false si no existe */
     public boolean eliminarHabitacion(int numero) {
 
         Habitacion habitacion = buscarHabitacion(numero);
@@ -71,7 +71,7 @@ public class Reserva {
 
         return false;
     }
-
+    /** * Metodo que permite buscar un servicio adicional de la reserva * @param codigo codigo del servicio a buscar * @return servicio adicional encontrado */
     public ServicioAdicional buscarServicio(String codigo) {
 
         ServicioAdicional encontrado = null;
@@ -86,11 +86,11 @@ public class Reserva {
 
         return encontrado;
     }
-
+    /** * Metodo que permite agregar un servicio adicional a la reserva * @param servicio servicio adicional que se desea agregar */
     public void agregarServicio(ServicioAdicional servicio) {
         this.listReservaServicios.add(servicio);
     }
-
+    /** * Metodo que permite eliminar un servicio adicional de la reserva * @param codigo codigo del servicio a eliminar * @return true si se elimina, false si no existe */
     public boolean eliminarServicio(String codigo) {
 
         ServicioAdicional servicio = buscarServicio(codigo);
@@ -102,8 +102,7 @@ public class Reserva {
 
         return false;
     }
-
-    // Convierte una fecha AAAAMMDD (ej. 20260924) en un numero de dias
+    /** * Metodo que permite convertir una fecha AAAAMMDD en un numero de dias * @param fecha fecha en formato AAAAMMDD * @return cantidad de dias */
     private int fechaADias(String fecha) {
 
         int anio = Integer.parseInt(fecha.substring(0, 4));
@@ -124,11 +123,11 @@ public class Reserva {
 
         return total;
     }
-
+    /** * Metodo que permite calcular la cantidad de noches de la reserva * @return cantidad de noches */
     public int calcularCantidadNoches() {
         return fechaADias(fechaSalida) - fechaADias(fechaEntrada);
     }
-
+    /** * Metodo que permite calcular el valor total de la reserva * @return valor total de la reserva */
     public double calcularValorTotal() {
 
         double subtotal = 0;

@@ -254,10 +254,9 @@ import javax.swing.JOptionPane;
                         String piso = leerTexto("Piso: ");
                         String tipo = leerTexto("Tipo (Individual/Doble/Suite): ");
                         int capacidad = leerEntero("Capacidad: ");
-                        double precio = leerDouble("Precio por noche: ");
                         String estado = leerTexto("Estado (Disponible/Reservada/Ocupada/Mantenimiento): ");
 
-                        if (hotel.registrarHabitacion(numero, piso, tipo, capacidad, precio, estado)) {
+                        if (hotel.registrarHabitacion(numero, piso, tipo, capacidad, estado)) {
                             JOptionPane.showMessageDialog(null, "Habitacion registrada.");
                         } else {
                             JOptionPane.showMessageDialog(null, "Ya existe una habitacion con ese numero.");
@@ -283,10 +282,9 @@ import javax.swing.JOptionPane;
                         String piso = leerTexto("Nuevo piso: ");
                         String tipo = leerTexto("Nuevo tipo (Individual/Doble/Suite): ");
                         int capacidad = leerEntero("Nueva capacidad: ");
-                        double precio = leerDouble("Nuevo precio por noche: ");
                         String estado = leerTexto("Nuevo estado (Disponible/Reservada/Ocupada/Mantenimiento): ");
 
-                        if (hotel.actualizarHabitacion(numero, piso, tipo, capacidad, precio, estado)) {
+                        if (hotel.actualizarHabitacion(numero, piso, tipo, capacidad, estado)) {
                             JOptionPane.showMessageDialog(null, "Habitacion actualizada.");
                         } else {
                             JOptionPane.showMessageDialog(null, "Habitacion no encontrada.");

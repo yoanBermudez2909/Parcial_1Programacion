@@ -15,7 +15,7 @@ public class Huesped {
     // Relaciones de la clase Huesped
     private List<Reserva> listHuespedReservas;
 
-    // Metodo constructor
+    /** * Metodo constructor de la clase Huesped * @param nombreCompleto del huesped * @param documentoIdentidad del huesped * @param telefono del huesped * @param correoElectronico del huesped * @param paisProcedencia del huesped */
     public Huesped(String nombreCompleto, String documentoIdentidad, String telefono, String correoElectronico, String paisProcedencia) {
         this.nombreCompleto = nombreCompleto;
         this.documentoIdentidad = documentoIdentidad;
@@ -24,7 +24,7 @@ public class Huesped {
         this.paisProcedencia = paisProcedencia;
         this.listHuespedReservas = new ArrayList<>();
     }
-
+    /** * Metodo que permite determinar si un huesped es frecuente * @return true si el huesped tiene tres o mas reservas, false si no */
     public boolean esFrecuente() {
         return listHuespedReservas.size() >= 3;
     }
